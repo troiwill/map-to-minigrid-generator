@@ -1,0 +1,87 @@
+# Package ######################################################################
+
+[build-system]
+requires = ["setuptools >= 61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "map-to-minigrid-generator"
+description = "A tool that converts a screenshot of a Google Map to a Minigrid environment."
+readme = "README.md"
+requires-python = ">= 3.8"
+authors = [{ name = "Troi Williams", email = "willkode@outlook.com" }]
+license = { text = "Apache License" }
+keywords = ["Memory, Environment, Agent, RL, Gymnasium, Minigrid, Google, Map"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+]
+dependencies = [
+    "numpy>=1.18.0",
+    "gymnasium>=0.28.1",
+    "pygame>=2.4.0",
+    "minigrid>=2.3.1",
+    "opencv-python>=4.0.0",
+    "scikit-image>=0.21.0",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/troiwill/map-to-minigrid-generator"
+Repository = "https://github.com/troiwill/map-to-minigrid-generator"
+Documentation = "https://github.com/troiwill/map-to-minigrid-generator"
+"Bug Report" = "https://github.com/troiwill/map-to-minigrid-generator/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["image2minigrid*"]
+
+# Linters and Test tools #######################################################
+
+[tool.isort]
+atomic = true
+profile = "black"
+append_only = true
+src_paths = ["image2minigrid", "tests"]
+add_imports = [ "from __future__ import annotations" ]
+
+[tool.pyright]
+include = [
+    "image2minigrid/**",
+]
+
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+]
+
+strict = []
+
+typeCheckingMode = "basic"
+pythonVersion = "3.8"
+typeshedPath = "typeshed"
+enableTypeIgnoreComments = true
+
+reportMissingImports = "none"
+
+reportUnknownMemberType = "none"
+reportUnknownParameterType = "none"
+reportUnknownVariableType = "none"
+reportUnknownArgumentType = "none"
+reportPrivateUsage = "warning"
+reportUntypedFunctionDecorator = "none"
+reportMissingTypeStubs = false
+reportUnboundVariable = "warning"
+reportGeneralTypeIssues ="none"
+reportPrivateImportUsage = "none"
+
+[tool.pytest.ini_options]
+filterwarnings = ['ignore:.*step API.*:DeprecationWarning'] # TODO: to be removed when old step API is removed
