@@ -41,6 +41,9 @@ Documentation = "https://github.com/troiwill/map-to-minigrid-generator"
 [tool.setuptools]
 include-package-data = true
 
+[tool.setuptools.dynamic]
+version = {attr = "image2minigrid.__version__"}
+
 [tool.setuptools.packages.find]
 include = ["image2minigrid*"]
 
