@@ -2,13 +2,11 @@ from __future__ import annotations
 import copy
 from typing import Tuple, Callable
 
-import cv2
 from minigrid.core.grid import Grid
 import numpy as np
 import skimage.measure
 
 from minigrid.core.world_object import Goal, Lava, WorldObj
-from minigrid.manual_control import ManualControl
 
 
 class Image2MinigridGenerator:
