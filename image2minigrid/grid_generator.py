@@ -17,7 +17,7 @@ class Image2MinigridGenerator:
         width: int,
         height: int,
         goal_pos: Tuple[int, int] | None = None,
-        free_space_color: Tuple[int, int, int] = (253, 183, 147),
+        free_space_color: Tuple[int, int, int] = (255, 181, 148),
         occupied_cell_obj: WorldObj = Lava(),
         grid_fn: Callable[[int, int], Grid] = Grid,
     ) -> Grid:
@@ -33,7 +33,7 @@ class Image2MinigridGenerator:
             height (int): The desired height of the output grid.
             goal_pos (Tuple[int, int] | None, optional): The position of the goal in the grid. Defaults to None.
             free_space_color (Tuple[int, int, int], optional): The RGB color representing free space in the image.
-                                                               Defaults to (253, 183, 147).
+                                                               Defaults to (255, 181, 148).
             occupied_cell_obj (WorldObj, optional): The object to use in occupied cells.
             grid_fn (Callable[[int, int], Grid], optional): A function to create the grid. Defaults to Grid.
 
