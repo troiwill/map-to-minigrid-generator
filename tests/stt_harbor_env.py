@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-import cv2
 from minigrid.core.grid import Grid
 from minigrid.core.mission import MissionSpace
-from minigrid.manual_control import ManualControl
 from minigrid.minigrid_env import MiniGridEnv
 from minigrid_json.grid_json import GridJson
 import numpy as np
